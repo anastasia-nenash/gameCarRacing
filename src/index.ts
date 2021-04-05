@@ -15,7 +15,7 @@ import {
 } from './setup';
 
 let gameOver = null;
-let score = {value:0, speed: 2};
+let tools = {value:0, speed: 2, time: 1000};
 let reqId: number;
 
 function setGameOver(view: CanvasView){
@@ -26,7 +26,9 @@ function setGameOver(view: CanvasView){
 function startGame(view: CanvasView){
     view.drawInfo('');
     view.drawScore(0);
-    score.value = 0;
+    tools.value = 0;
+    tools.time = 1000;
+    tools.speed = 2;
     
 
     const car = new CarMain(
@@ -44,10 +46,10 @@ function startGame(view: CanvasView){
             CAR_HEIGHT,
             {x: 200, y: CAR_ENEMY_SRARTY},
             CAR_ENEMY,
-            score.speed);
+            tools.speed);
         cars.push(carEn);
         carEn.moveCarEnemy();
-    }, 1000)
+    }, tools.time)
 
 
     gameLoop(view,car, cars);
@@ -61,7 +63,7 @@ function gameLoop(
     view.clear();
      
     view.drawCar(carMain);
-    view.drawCarEnemy(carsEn, score);
+    view.drawCarEnemy(carsEn, tools);
 
     if ((carMain.isMovingLeft && carMain.pos.x > 200) || 
     (carMain.isMovingRight && carMain.pos.x < 800 - carMain.weight)){

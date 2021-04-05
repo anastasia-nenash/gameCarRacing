@@ -53,6 +53,9 @@ export class CanvasView{
                 if (score.value % 5 == 0 && score.value != 0) {
         
                     score.speed += 1;
+                    if (score.time > 300){
+                        score.time -= 300;
+                    }
                 
                 }
                 this.drawScore(score.value);
