@@ -1,0 +1,39 @@
+
+#main {
+    position: relative;
+    margin: 0 auto;
+    background-image: url(images/background.png);
+    background-position: center;
+    width: 900px;
+    height: 550px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+canvas {
+    width: 900px;
+    height: 550px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    margin-bottom: 20px;
+}
+
+#display {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+}
+
+#score{
+    color: rgb(248 215 84);
+}
+#info {
+    width: 150px;
+}
