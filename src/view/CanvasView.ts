@@ -1,5 +1,4 @@
 import { CarEnemy } from '~/spriets/car-enemy';
-import {CarMain} from '../spriets/car-main';
 import {Car} from '../spriets/car'
 
 export class CanvasView{
